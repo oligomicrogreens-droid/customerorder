@@ -6,14 +6,13 @@
     <title>Privacy Policy | customerorder</title>
     <style>
         :root {
-            /* Modern Dark Theme Variables */
             --bg-color: #121212;
             --card-bg: #1e1e1e;
             --text-primary: #e0e0e0;
             --text-secondary: #b0b0b0;
-            --accent-color: #4da6ff;
+            --accent-color: #66bb6a; /* Fresh Green for Microgreens brand */
             --border-color: #333333;
-            --highlight-bg: rgba(77, 166, 255, 0.1);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -29,82 +28,84 @@
             line-height: 1.6;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
             min-height: 100vh;
             padding: 40px 20px;
         }
 
-        .policy-container {
+        .container {
             background-color: var(--card-bg);
             width: 100%;
             max-width: 800px;
             padding: 40px;
             border-radius: 16px;
+            box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
+        /* Header Section */
         h1 {
-            font-size: 2.2rem;
-            color: #ffffff;
+            font-size: 2rem;
             margin-bottom: 10px;
+            color: #ffffff;
             letter-spacing: -0.5px;
         }
 
-        .intro-text {
-            color: var(--text-secondary);
-            margin-bottom: 30px;
+        .intro {
+            margin-bottom: 25px;
             font-size: 1.05rem;
+            color: var(--text-secondary);
         }
 
-        /* Meta Info Card Style */
-        .meta-box {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+        /* Meta Info Box */
+        .meta-info {
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 20px;
-            margin-bottom: 40px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
         }
 
         .meta-row {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .meta-row:last-child {
+            margin-bottom: 0;
         }
 
         .meta-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
+            color: var(--text-secondary);
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-right: 10px;
         }
 
         .meta-value {
-            font-size: 1rem;
-            color: #fff;
+            color: var(--accent-color);
             font-weight: 500;
         }
 
-        /* Content Styles */
+        /* Content Typography */
         h2 {
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-top: 40px;
+            font-size: 1.3rem;
+            margin-top: 35px;
             margin-bottom: 15px;
-            padding-bottom: 10px;
+            color: #ffffff;
             border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
         }
 
         p {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
             color: var(--text-secondary);
         }
 
         ul {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
             padding-left: 20px;
             color: var(--text-secondary);
         }
@@ -117,163 +118,131 @@
             color: var(--text-primary);
         }
 
-        /* Highlight Box for Privacy Statement */
-        .privacy-highlight {
-            background-color: var(--highlight-bg);
-            border-left: 4px solid var(--accent-color);
-            padding: 20px;
-            border-radius: 4px;
-            margin: 20px 0;
-            color: #fff;
-        }
-
         /* Links */
         a {
             color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 1px dotted var(--accent-color);
-            transition: all 0.2s;
+            transition: opacity 0.2s ease;
         }
 
         a:hover {
             opacity: 0.8;
-            border-bottom: 1px solid var(--accent-color);
+            text-decoration: underline;
         }
 
-        /* Footer */
+        /* Contact Section specific styling */
+        .contact-box {
+            background-color: rgba(102, 187, 106, 0.1);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
         .footer {
-            margin-top: 60px;
+            margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
         }
 
-        /* Responsive Design */
-        @media (min-width: 600px) {
-            .meta-row {
-                flex-direction: row;
-                align-items: baseline;
-            }
-            .meta-label {
-                width: 150px;
-                flex-shrink: 0;
-                margin-bottom: 0;
-            }
-        }
-
+        /* Mobile Responsiveness */
         @media (max-width: 600px) {
             body {
                 padding: 0;
             }
-            .policy-container {
+            
+            .container {
                 border-radius: 0;
-                border: none;
-                box-shadow: none;
                 padding: 25px;
+                box-shadow: none;
+                border: none;
             }
+
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.75rem;
+            }
+
+            .meta-row {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="policy-container">
+    <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="intro-text">
-            Thank you for choosing <strong>customerorder</strong>. We are committed to providing a simple, efficient note-taking experience while respecting your right to absolute privacy.
-        </p>
+        <p class="intro">This page informs you of our policies regarding the collection, use, and disclosure of Personal Information when you use our Service. We are committed to protecting your privacy, especially when you buy our farm-fresh microgreens.</p>
 
-        <!-- Meta Info Section -->
-        <div class="meta-box">
+        <div class="meta-info">
             <div class="meta-row">
-                <span class="meta-label">App Name</span>
+                <span class="meta-label">App Name:</span>
                 <span class="meta-value">customerorder</span>
             </div>
             <div class="meta-row">
-                <span class="meta-label">Package Name</span>
+                <span class="meta-label">Package Name:</span>
                 <span class="meta-value">com.oligocustomerorder.app</span>
             </div>
             <div class="meta-row">
-                <span class="meta-label">Developer</span>
+                <span class="meta-label">Developer:</span>
                 <span class="meta-value">Oligo Microgreens</span>
             </div>
             <div class="meta-row">
-                <span class="meta-label">Contact Email</span>
-                <span class="meta-value"><a href="mailto:oligomicrogreens@gmail.com">oligomicrogreens@gmail.com</a></span>
-            </div>
-            <div class="meta-row">
-                <span class="meta-label">Last Updated</span>
+                <span class="meta-label">Last Updated:</span>
                 <span class="meta-value">08 January 2026</span>
             </div>
         </div>
 
-        <h2>1. App Type & Behavior</h2>
-        <p><strong>customerorder</strong> is a Notes app designed to allow users to create, edit, and view personal notes seamlessly. The application is built to be lightweight and user-friendly.</p>
+        <h2>1. Information We Collect</h2>
+        <p>We collect information to provide you with our products and services.</p>
         <ul>
-            <li><strong>Login-Free:</strong> You do not need to register, sign up, or log in to use any feature of this app.</li>
-            <li><strong>Functionality:</strong> The app utilizes your device's internet connection solely for essential operations, such as syncing your notes or loading necessary app resources.</li>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, and shipping address.</li>
+            <li><strong>Payment Information:</strong> We use a third-party payment processor (e.g., Razorpay, Stripe) to process payments. We do not store your full credit/debit card numbers.</li>
+            <li><strong>Order Information:</strong> Details about the microgreens you purchase, order history, and delivery instructions.</li>
+            <li><strong>Automatic Data:</strong> We may collect device information, such as IP address, operating system, and App usage statistics to improve functionality.</li>
         </ul>
 
-        <h2>2. Data Collection & Privacy Rules</h2>
-        <div class="privacy-highlight">
-            <strong>We do NOT collect, store, or share your personal data.</strong>
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the collected information for:</p>
+        <ul>
+            <li>Processing and delivering your orders of farm-produced microgreens.</li>
+            <li>Communicating with you regarding your order, delivery status, or customer support queries.</li>
+            <li>Sending promotional updates (if you have opted-in).</li>
+            <li>Improving our App experience and functionality.</li>
+        </ul>
+
+        <h2>3. Data Sharing and Disclosure</h2>
+        <p>We do not sell your personal information to third parties. We may share information with:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> Logistics partners for delivery, payment processors, and hosting services required to operate the app.</li>
+            <li><strong>Legal Obligations:</strong> We may disclose your information if required by law or to respond to valid requests by public authorities.</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>We implement physical, electronic, and managerial procedures to safeguard your information. While we strive to protect your personal data, no method of transmission over the internet is 100% secure.</p>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, such as managing your orders and complying with legal, accounting, or reporting obligations.</p>
+
+        <h2>6. User Rights & Data Deletion</h2>
+        <ul>
+            <li><strong>Access & Correction:</strong> You may review or update your personal information in the App settings.</li>
+            <li><strong>Deletion:</strong> If you wish to delete your account and all associated data, please email us at <a href="mailto:oligomicrogreens@gmail.com">oligomicrogreens@gmail.com</a> with the subject "Delete My Account."</li>
+        </ul>
+
+        <h2>7. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, or if you wish to contact the developer regarding privacy or the app, please contact us:</p>
+        
+        <div class="contact-box">
+            <p><strong>Email:</strong> <a href="mailto:oligomicrogreens@gmail.com">oligomicrogreens@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:7021421583">7021421583</a></p>
         </div>
-        <p>Your privacy is our priority. To ensure this, <strong>customerorder</strong> does NOT collect any of the following information:</p>
-        <ul>
-            <li>Name, email address, or phone numbers.</li>
-            <li>Contact lists, address book, or social graph data.</li>
-            <li>Photos, videos, audio files, or documents stored on your device.</li>
-            <li>Precise location (GPS coordinates) or physical address.</li>
-            <li>Device identifiers (IMEI, MAC address) or IP addresses.</li>
-            <li>User account details or login credentials.</li>
-        </ul>
-        <p><strong>Zero Tracking:</strong> We do not track your browsing history or usage across other apps. We do not use third-party analytics services that build user profiles.</p>
-        <p><strong>Third-Party Sharing:</strong> Since we do not collect any personal data, we have nothing to share with third parties, advertisers, or data brokers.</p>
-        <p><em>Note on Technical Statistics:</em> If any internal statistics are generated (such as a generic count of total notes created globally), these are strictly non-personal, aggregated, and anonymous. These metrics are visible only to the developer (Oligo Microgreens) and are used solely to monitor technical performance and improve app quality.</p>
-
-        <h2>3. Permissions & Internet Usage</h2>
-        <p>To function correctly, the app may use your internet connection. However, this is used strictly for:</p>
-        <ul>
-            <li>Syncing your notes to ensure they are available when you need them.</li>
-            <li>Loading basic app content and resources.</li>
-        </ul>
-        <p>No personal data is transmitted to or stored by the developer during these processes.</p>
-        <p>We do <strong>not</strong> request access to sensitive permissions such as:</p>
-        <ul>
-            <li>Camera or Microphone</li>
-            <li>Contacts or Call Logs</li>
-            <li>Location Services</li>
-            <li>External Storage (for reading your personal files)</li>
-            <li>SMS</li>
-        </ul>
-
-        <h2>4. Advertisements & Third-Party Services</h2>
-        <p><strong>This app is 100% Ad-Free.</strong></p>
-        <p>We do not display banner ads, pop-ups (interstitials), or rewarded videos. Consequently:</p>
-        <ul>
-            <li>There is no tracking by ad networks.</li>
-            <li>There is no user profiling.</li>
-            <li>There is no cross-app or cross-site tracking.</li>
-            <li>We do not use any third-party advertising SDKs.</li>
-        </ul>
-
-        <h2>5. Children’s Privacy / Age Limitation</h2>
-        <p>While <strong>customerorder</strong> does not contain any harmful, violent, or inappropriate content and is safe for general audiences, it is intended for users aged <strong>13 and above</strong>.</p>
-        <p>Since the app does not collect personal data (such as age, name, or location), we do not knowingly collect information from children under 13. If you are a parent or guardian and have any concerns regarding the app's usage, please contact us directly.</p>
-
-        <h2>6. Changes to This Policy</h2>
-        <p>The developer (Oligo Microgreens) may update this Privacy Policy occasionally to reflect updates in the app's features or changes in legal regulations.</p>
-        <p>When an update occurs, the <strong>"Last Updated"</strong> date at the top of this page will be revised. We recommend that users review this page periodically to stay informed about our privacy practices.</p>
-
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions, concerns, or suggestions regarding this Privacy Policy or the <strong>customerorder</strong> app, please feel free to contact us:</p>
-        <p>
-            <strong>Email:</strong> <a href="mailto:oligomicrogreens@gmail.com">oligomicrogreens@gmail.com</a>
-        </p>
 
         <div class="footer">
             &copy; 2026 Oligo Microgreens. All rights reserved.
